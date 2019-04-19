@@ -72,7 +72,7 @@ export default {
 .nav-ul {
   position: relative;
   float: right;
-  width: 50%;
+  width: 60%;
   bottom:15px;
 }
 .nav-ul li {

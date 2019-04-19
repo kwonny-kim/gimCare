@@ -12,6 +12,7 @@
 <style scoped lang="scss">
   footer {
     position: relative;
+    top: 72px;
     width: 100%;
     height: 280px;
     padding: 5%;
