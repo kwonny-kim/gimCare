@@ -28,7 +28,7 @@
         <br />
         <span class="content-sub">좀더 다양한 이벤트로 인한 혜택을 경험 하실 수 있습니다. 어서 예약하세요!</span>
       </div>
-      <Slider/>
+      <EventSlider/>
     </div>
     <div class="content-service">
       <div class="content-info">
@@ -52,7 +52,7 @@
         <hr class="line"/>
         <span class="content-title">REVIEW</span>
         <br />
-        <Slider/>
+        <ReviewSlider/>    
       </div>
     </div>
     <div class="content-messanger">
@@ -87,11 +87,14 @@
 </template>
 
 <script>
- // import Slider from './Slider/Slider.vue';
+ import EventSlider from './Slider/EventSlide.vue';
+ import ReviewSlider from './Slider/ReviewSlide.vue';
  export default {
    name: 'Home',
-   props: {
-     msg: String
+   components: {
+     // Home,
+     EventSlider,
+     ReviewSlider
    }
  }
 </script>
@@ -107,11 +110,12 @@
 .top-content{
   position: relative;
   width: 100%;
-  height: 1080px;
+  height: 0;
+  padding-top: calc(1080 / 1920 * 100%);
   background: #f36f21;
   background-image: url('../assets/img/img-main.png');
   background-repeat: no-repeat;
-  background-position: 50% 50%;
+  background-position: center center;
   background-size: 100% 100%;
 
 }
@@ -256,7 +260,6 @@
 .airport-line{
   position: absolute;
   top:30%;
-  left: 0;
   width: 10px;
   height: 10px;
   display: block;

@@ -59,6 +59,7 @@ button[type="submit"] {
   position: relative;
   top:72px;
   min-width: 480px;
+  // max-width: 1920px;
   width: 100%;
   margin: 0 auto;
   // padding:0 15%;
@@ -69,6 +70,7 @@ button[type="submit"] {
 
 #app {
   min-width: 480px;
+  // max-width: 1920px;
   width: 100%;
   height: 100%;
   // background: #eee;
