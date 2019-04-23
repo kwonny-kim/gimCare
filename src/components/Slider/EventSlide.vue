@@ -79,7 +79,7 @@
     position: relative;
     top:32%;
     color:#fff;
-    font-size: 1.5rem;
+    font-size: 2.5rem;
     font-weight: bold;
     margin: 0 auto;
 

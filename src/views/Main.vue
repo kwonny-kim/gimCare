@@ -35,7 +35,8 @@
         <hr class="line"/>
         <span class="content-title">SERVICE</span>
         <br />
-        <div class="service-info">
+
+        <!-- <div class="service-info">
           <div class="reserve-info"><div class="reserve-line"></div> <span class="reserve-text">배송예약</span></div>
           <div class="airport-info"><div class="airport-line"></div> <span class="airport-text">공항예약</span></div>
         </div>
@@ -44,7 +45,10 @@
           <div class="explain-img"><img src="@/assets/img/icon-jimcare.png"/></div>
           <div class="explain-img"><img src="@/assets/img/icon-home.png"/></div>
           <div class="explain-img"><img src="@/assets/img/icon-airport.png"/></div>
-        </div>
+        </div> -->
+      </div>
+      <div class="service-img">
+
       </div>
     </div>
     <div class="content-review">
@@ -52,7 +56,7 @@
         <hr class="line"/>
         <span class="content-title">REVIEW</span>
         <br />
-        <ReviewSlider/>    
+        <ReviewSlider/>
       </div>
     </div>
     <div class="content-messanger">
@@ -87,8 +91,8 @@
 </template>
 
 <script>
- import EventSlider from './Slider/EventSlide.vue';
- import ReviewSlider from './Slider/ReviewSlide.vue';
+ import EventSlider from '../components/Slider/EventSlide.vue';
+ import ReviewSlider from '../components/Slider/ReviewSlide.vue';
  export default {
    name: 'Home',
    components: {
@@ -159,14 +163,20 @@
   color:#fff;
 }
 .top-message{
-  font-size: 2rem;
   font-weight: bold;
 }
-.top-message span,h2{
+.top-message span{
+
+  font-size: 3rem;
   display: inline-block;
 }
+.top-message h2{
+  font-size: 5rem;
+  display: inline-block;
+}
+
 .middle-message {
-  font-size: 1.2rem;
+  font-size: 3.2rem;
   font-weight: 500;
   line-height: 1.2;
 }
@@ -174,7 +184,7 @@
   display: block;
 }
 .bottom-message{
-  font-size: 1rem;
+  font-size: 2rem;
   line-height: 2;
 }
 .bottom-message span {
@@ -183,7 +193,7 @@
 .content-info{
   position: relative;
   width: 80%;
-  margin:auto;
+  margin:0 auto;
   /* padding: 0% 35%; */
 }
  .line{
@@ -199,12 +209,13 @@
   position: relative;
   text-align: center;
   color:#ff9557;
-  font-size: 2rem;
+  font-size: 3rem;
   font-weight: bold;
   line-height: 2;
 }
 .content-sub {
   color:#7d7d7d;
+  font-size: 2rem;
   line-height: 3;
 
 }
@@ -220,8 +231,17 @@
 .content-review .content-title {
   text-align: center;
   color:#fff;
-  font-size: 2rem;
+  font-size: 3rem;
   font-weight: bold;
+}
+.service-img{
+  width: 100%;
+  height: 100%;
+  margin:0 auto;
+  background-image: url('../assets/img/img_main_service.jpg');
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center center;
 }
 .service-info{
   position: relative;
@@ -297,6 +317,7 @@
   width: 15%;
 }
 .messanger-explain .explain-img span {
+  font-size: 1.5rem;
   display: block;
   line-height: 3;
   font-weight: bold;

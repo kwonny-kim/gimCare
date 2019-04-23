@@ -12,17 +12,18 @@
 <style scoped lang="scss">
   footer {
     position: relative;
-    top: 72px;
+    top: 7.2rem;
     width: 100%;
     height: 280px;
-    padding: 5%;
+    padding: 5rem;
     background: #000;
     color: #fff;
-    font-size: 1rem;
+    font-size: 2rem;
     text-align: center;
   }
   footer span {
     display: block;
+    font-size: 12px;
     margin:1% 0%;
   }
 </style>

@@ -8,10 +8,12 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "cache-loader": "^3.0.0",
     "core-js": "^2.6.5",
     "css-loader": "^2.1.1",
     "hooper": "^0.1.2",
     "vue": "^2.6.10",
+    "vue-router": "^3.0.6",
     "vue-style-loader": "^4.1.2"
   },
   "devDependencies": {

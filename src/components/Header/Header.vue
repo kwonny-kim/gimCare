@@ -1,5 +1,7 @@
+
 <template>
 <header>
+
   <nav class="main-nav">
     <span class="main-logo"><img src="@/assets/img/icon-logo.png" /></span>
     <ul class="nav-ul">
@@ -7,7 +9,7 @@
         홈
       </li>
       <li>
-        예약
+        <router-link to="/reserve/">예약</router-link></button>
       </li>
       <li>
         예약조회
@@ -39,13 +41,16 @@
 
 </template>
 <script>
+
 export default {
   name: 'Header',
   props: {
     msg: String
   }
 }
+
 </script>
+
 <style scoped lang='scss'>
 .main-nav{
   position: absolute;
@@ -53,7 +58,7 @@ export default {
   width: 100%;
   height: 72px;
   color:#7d7d7d;
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: 500;
   padding: 1% 15%;
 // padding: 2% 15%;

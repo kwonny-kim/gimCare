@@ -1,8 +1,10 @@
 <template>
+
   <div id="app">
     <Header/>
     <div id="container">
-      <Home/>
+      <!-- <Home/> -->
+      <router-view/>
 
     </div>
     <Footer/>
@@ -10,7 +12,7 @@
 </template>
 
 <script>
-import Home from './components/Main.vue'
+import Home from './views/Main.vue'
 import Header from './components/Header/Header.vue'
 import Footer from './components/Footer/Footer.vue'
 
@@ -26,6 +28,7 @@ export default {
 
 <style>
 * {
+  font-size: 62.5%;
   margin: 0;
   padding: 0;
   box-sizing: border-box;

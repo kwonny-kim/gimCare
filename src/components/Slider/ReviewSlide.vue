@@ -51,6 +51,7 @@
 </script>
 <style scoped>
 .slider{
+  font-size: 62.5%;
   background: #fff;
   padding: 5%;
 }
@@ -63,12 +64,13 @@
   border:5px solid #ff9557;
   margin: 0 auto;
   display: inline-block;
-  padding: 10%;
+  padding: 1rem;
 }
 .slider-text {
-  font-size: 0.9rem;
+  font-size: 14px;
   word-spacing: normal;
   word-wrap: break-word;
+  overflow:hidden;
 }
 .review-number{
   position: relative;
