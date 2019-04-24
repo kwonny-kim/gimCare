@@ -3,13 +3,15 @@
 <header>
 
   <nav class="main-nav">
-    <span class="main-logo"><img src="@/assets/img/icon-logo.png" /></span>
+    <span class="main-logo">
+      <router-link to="/"><img src="@/assets/img/icon-logo.png" /></router-link>
+    </span>
     <ul class="nav-ul">
       <li>
         홈
       </li>
       <li>
-        <router-link to="/reserve/">예약</router-link></button>
+        <router-link to="/reserve">예약</router-link>
       </li>
       <li>
         예약조회

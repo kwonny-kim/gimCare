@@ -12,14 +12,14 @@
 </template>
 
 <script>
-import Home from './views/Main.vue'
-import Header from './components/Header/Header.vue'
-import Footer from './components/Footer/Footer.vue'
+// import Home from './views/Main.vue';
+import Header from './components/Header/Header.vue';
+import Footer from './components/Footer/Footer.vue';
 
 export default {
   name: 'app',
   components: {
-    Home,
+    // Home,
     Header,
     Footer
   }

@@ -8,5 +8,5 @@ new Vue({
   render: h => h(App),
 
   //라우터 객체 넘겨주기
-  router
+  router,
 }).$mount('#app');
