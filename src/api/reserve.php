@@ -1,5 +1,20 @@
 <?php
-include '../config.php';
+$host = "gimcarry.oig.kr";
+$user = "gimcarry";
+$password = "gimcarry123..";
+$dbname = "db_gimcarry";
+$id = '';
+
+$con = mysqli_connect($host, $user, $password,$dbname);
+
+$method = $_SERVER['REQUEST_METHOD'];
+$request = explode('/', trim($_SERVER['PATH_INFO'],'/'));
+//$input = json_decode(file_get_contents('php://input'),true);
+
+
+if (!$con) {
+  die("Connection failed: " . mysqli_connect_error());
+}
 
 switch ($method) {
     case 'GET':
@@ -7,10 +22,25 @@ switch ($method) {
       $sql = "select * from tb_reserve".($id?" where id=$id":'');
       break;
     case 'POST':
-      $name = $_POST["name"];
-      $email = $_POST["email"];
+      $start_address = $_POST["startAddress"];
+      $end_address = $_POST["endAddress"];
+      $re_flight = $_POST["flight"];
+      $re_pickup = $_POST["pickup"];
+      $re_delivery = $_POST["delivery"];
+      $re_basic = $_POST["basic"];
+      $re_excess = $_POST["excess"];
+      $re_price = $_POST["price"];
+      $re_phone = $_POST["phone"];
+      $re_messenger = $_POST["messenger"];
+      $re_pass = $_POST["pass"];
+      $re_coupon = $_POST["coupon"];
+      $re_etc = $_POST["etc"];
 
-      $sql = "insert into tb_reserve (name, email) values ('$name', '$email')";
+
+      $sql = "insert into tb_reserve(start_address, end_address, re_flight, re_pickup, re_delivery, re_basic, re_excess, re_price, re_phone, re_messenger, re_pass, re_coupon, re_etc) values
+                                    ('$start_address','$end_address','$re_flight','$re_pickup','$re_delivery','$re_basic','$re_excess','$re_price','$re_phone','$re_messenger','$re_pass','$re_coupon','$re_etc')";
+      // $sql = "insert into tb_reserve(start_address, end_address, re_flight, re_pickup, re_delivery, re_basic, re_excess, re_price, re_phone, re_messenger, re_pass, re_coupon, re_etc) values
+      //                                                             ('출발지','도착지','항공편명','','','1','2','3000','12345','ㅅㄷㄴㅅ','1234','ㅅ1ㅅ2ㅅ3','tes')";
       break;
 }
 
