@@ -40,7 +40,7 @@ label{
   display: block;
   width: 100%;
 }
-.start-button-area div{
+.start-button-area button{
   border: 1px solid #000;
   background: #fff;
   border-radius: 3px;
@@ -81,7 +81,7 @@ label{
   display: block;
   width: 100%;
 }
-.end-button-area div {
+.end-button-area button {
   border: 1px solid #000;
   background: #fff;
   border-radius: 3px;

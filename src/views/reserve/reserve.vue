@@ -6,21 +6,24 @@
     </div>
     <div class="reserve-content">
       <form>
-
+<vue-daum-postcode/>
 <!-- 출발지 -->
       <div class="reserve-start">
         <label><img src="@/assets/img/icon-location.png" class="reserve-icon"/>출발지</label>
         <div class="start-button-area">
-          <div id="start-on"
-              v-on:click="startOn = true"
-              v-bind:class="{active: startOn}">제 1여객터미널</div>
-          <div id="start-on"
+          <button type="button" id="start-on"
+              v-on:change="startOn = true"
+              v-bind:class="{active: startOn}"
+              >제 1여객터미널</button>
+          <button type="button" id="start-on"
               v-on:click="startOn = false"
-              v-bind:class="{active: !startOn}">제 2여객터미널</div>
-          <div>주소검색</div>
+              v-bind:class="{active: !startOn}"
+              >제 2여객터미널</button>
+          <!-- <button>주소검색</button> -->
+
         </div>
         <div class="start-text-area">
-          <input type="text" class="input-text" v-model="startAddress" name="startAddress" placeholder="상세주소 입력"/>
+          <input type="text" class="input-text" v-model="startAddress" ref="startAddress" name="startAddress" placeholder="상세주소 입력"/>
         </div>
       </div>
 
@@ -28,16 +31,18 @@
       <div class="reserve-end">
         <label><img src="@/assets/img/icon-location.png" class="reserve-icon"/>도착지</label>
         <div class="end-button-area">
-          <div id="end-on"
+          <button type="button" id="end-on"
               v-on:click="endOn = true"
-              v-bind:class="{active: endOn}">제 1여객터미널</div>
-          <div id="end-on"
+              v-bind:class="{active: endOn}"
+              >제 1여객터미널</button>
+          <button type="button" id="end-on"
               v-on:click="endOn = false"
-              v-bind:class="{active: !endOn}">제 2여객터미널</div>
-          <div>주소검색</div>
+              v-bind:class="{active: !endOn}"
+              >제 2여객터미널</button>
+          <button>주소검색</button>
         </div>
         <div class="end-text-area">
-          <input type="text" class="input-text" v-model="endAddress" name="endAddress" placeholder="상세주소 입력"/>
+          <input type="text" class="input-text" v-model="endAddress" ref="endAddress" name="endAddress" placeholder="상세주소 입력"/>
         </div>
       </div>
 
@@ -45,7 +50,7 @@
       <div class="reserve-flight">
         <label><img src="@/assets/img/icon-airportticket.png" class="reserve-icon"/>항공편명</label>
         <div class="flight-text-area">
-          <input type="text" class="input-text" v-model="flight" name="flight" placeholder="대/소문자 구분 정확히 입력"/>
+          <input type="text" class="input-text" v-model="flight" name="flight" ref="flight" placeholder="대/소문자 구분 정확히 입력"/>
         </div>
       </div>
 
@@ -184,10 +189,16 @@ var mysqlDB = require('./mysql-db');
 mysqlDB.connect();
 </script>
 <script>
+import VueDaumMapPostcode from "@/components/DaumPost/DaumPost.vue";
 
 export default{
-    data: function(){
+  name : 'reserve',
+  components: {
+    VueDaumMapPostcode
+  },
+    data() {
       return {
+        startTuminel:'',
         reserve: {
           startAddress: '',
           endAddress : '',
@@ -201,7 +212,8 @@ export default{
           messenger:'',
           pass:'',
           coupon:'',
-          etc:''
+          etc:'',
+          contacts:[]
         },
         startOn: true,
         endOn: true
@@ -220,10 +232,27 @@ export default{
       getContacts: function(){
      },
      createContact: function(){
-       console.log("Create contact!")
+       if(!this.startAddress){
+         console.log("터미널:", this.startAddress);
+         console.log("출발지:", this.startTuminel);
+
+         alert('픽업을 원하시는 출발지를 입력해주세요.');
+         this.$refs.startAddress.focus();
+         return
+       }else if(!this.endAddress){
+         alert('배송을 원하시는 도착지를 입력해주세요.');
+         this.$refs.endAddress.focus();
+         return
+       }else if(!this.flight){
+         alert('항공편명을 입력해주세요.');
+         this.$refs.flight.focus();
+         return
+       }
+
+       console.log("예약!")
 
         let formData = new FormData();
-        console.log("출발지:", this.startAddress);
+        console.log("출발지:",this.startTuminel +this.startAddress);
         console.log("도착지:", this.endAddress);
         console.log("항공편명:", this.flight);
         console.log("픽업시간:", this.pickup);
@@ -238,6 +267,7 @@ export default{
         console.log("기타:", this.etc);
 
 
+        formData.append('startTuminel', this.startTuminel)
         formData.append('startAddress', this.startAddress)
         formData.append('endAddress', this.endAddress)
         formData.append('flight', this.flight)
@@ -250,7 +280,7 @@ export default{
         formData.append('messenger', this.messenger)
         formData.append('pass', this.pass)
         formData.append('coupon', this.coupon)
-        formData.append('etc', this.etc)
+        formData.append('etc', reserve.etc)
 
         var contact = {};
         formData.forEach(function(value, key){
@@ -291,10 +321,16 @@ export default{
        this.etc = '';
      },
      switched(startOn) {
+       alert(this.name);
        this.$emit('input',startOn);
+
      },
      switched(endOn) {
        this.$emit('input',endOn);
+     },
+     TuminelFunction: function (value) {
+
+       alert(value);
      }
   }
 }

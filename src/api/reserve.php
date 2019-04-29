@@ -10,7 +10,11 @@ $con = mysqli_connect($host, $user, $password,$dbname);
 $method = $_SERVER['REQUEST_METHOD'];
 $request = explode('/', trim($_SERVER['PATH_INFO'],'/'));
 //$input = json_decode(file_get_contents('php://input'),true);
+mysqli_set_charset($dbname, 'utf8');
 
+mysqli_query($con,"set session character_set_connection=utf8");
+mysqli_query($con,"set session character_set_result=utf8");
+mysqli_query($con,"set session character_set_client=utf8");
 
 if (!$con) {
   die("Connection failed: " . mysqli_connect_error());

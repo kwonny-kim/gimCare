@@ -7827,6 +7827,18 @@ vue-axios@^2.1.4:
   resolved "https://registry.yarnpkg.com/vue-axios/-/vue-axios-2.1.4.tgz#a9d298f7e876f9a87feb336b37adcbce34ff9f9f"
   integrity sha512-DS8Q+WFT3i7nS0aZ/NMmTPf2yhbtlXhj4QEZmY69au/BshsGzGjC6dXaniZaPQlErP3J3Sv1HtQ4RVrXaUTkxA==
 
+vue-datepicker-local@^1.0.19:
+  version "1.0.19"
+  resolved "https://registry.yarnpkg.com/vue-datepicker-local/-/vue-datepicker-local-1.0.19.tgz#e6ca49c122823df3194895b67d98d7525807746f"
+  integrity sha512-yVV+jFV6yZArtFWqyjIHICz+9bpXyqx7FyeNuQGoNpow9sjk9N0FGKcFUiwrpPTcynaUT0xEfNou54wxVt/6IQ==
+  dependencies:
+    vue "^2.5.15"
+
+vue-daum-postcode@^0.4.0:
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/vue-daum-postcode/-/vue-daum-postcode-0.4.0.tgz#fce82ce35fd9eabf352e09b59518496c2b8d2bc0"
+  integrity sha512-vkfUT+JViLdpeycel4h4cfhcetKc4YTOOG+haJ96y9f+R/D0ubvQ6Bnj1AUMIfZ/aQ2AURDEw0LZSggXC3nNQw==
+
 vue-eslint-parser@^2.0.3:
   version "2.0.3"
   resolved "http://registry.npm.taobao.org/vue-eslint-parser/download/vue-eslint-parser-2.0.3.tgz#c268c96c6d94cfe3d938a5f7593959b0ca3360d1"
@@ -7907,7 +7919,7 @@ vue-template-es2015-compiler@^1.9.0:
   resolved "http://registry.npm.taobao.org/vue-template-es2015-compiler/download/vue-template-es2015-compiler-1.9.1.tgz#1ee3bc9a16ecbf5118be334bb15f9c46f82f5825"
   integrity sha1-HuO8mhbsv1EYvjNLsV+cRvgvWCU=
 
-vue@^2.6.10:
+vue@^2.5.15, vue@^2.6.10:
   version "2.6.10"
   resolved "http://registry.npm.taobao.org/vue/download/vue-2.6.10.tgz?cache=0&other_urls=http%3A%2F%2Fregistry.npm.taobao.org%2Fvue%2Fdownload%2Fvue-2.6.10.tgz#a72b1a42a4d82a721ea438d1b6bf55e66195c637"
   integrity sha1-pysaQqTYKnIepDjRtr9V5mGVxjc=

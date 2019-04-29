@@ -3,7 +3,11 @@ import Vuex from "vuex";
 import Axios from "axios";
 import Router from "vue-router";
 import Home from "./views/Main.vue";
+import VueDaumPostcode from "vue-daum-postcode";
 
+Vue.use(VueDaumPostcode, {
+  name: "vue-daum-postcode"
+});
 Vue.use(Router);
 Vue.use(Vuex);
 Vue.use(Axios);
